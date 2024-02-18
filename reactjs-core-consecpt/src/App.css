@@ -7,6 +7,16 @@
   pointer-events: none;
 }
 
+.product{
+  background-color: aquamarine;
+  border: 2px solid goldenrod;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
