@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   // const products =[
@@ -16,10 +16,42 @@ function App() {
     } */}
     {/* <Product name="Laptop"></Product> */}
 
-
-    <Counter></Counter>
+{/* 
+    <Counter></Counter> */}
+    <EntrnalUser></EntrnalUser>
     </div>
   );
+}
+
+
+function EntrnalUser(){
+  const [users, setUsers] = useState([])
+  useEffect(()=>{
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(res => res.json())
+    .then(data => setUsers(data))
+  },[])
+  return(
+    <>
+      <div style={{textAlign:"center"}}>
+      <h2>Extrunal User</h2>
+      <p>{users.length}</p>
+      </div>
+    <div className='user'>
+    {
+        users.map(user => <User name={user.name} ></User>)
+      }
+    </div>
+    </>
+  )
+}
+
+function User({name}){
+  return(
+    <div style={{border:"2px solid red" , margin: '20px',padding:'20px'}}>
+      <h3>Name: {name}</h3>
+    </div>
+  )
 }
 
 function Counter(){

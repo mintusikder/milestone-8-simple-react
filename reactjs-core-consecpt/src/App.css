@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.user{
+  display: grid ;
+  grid-template-columns: repeat(3 ,1fr);
+}
 
 .product{
   background-color: aquamarine;
