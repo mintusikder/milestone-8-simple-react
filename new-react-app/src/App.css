@@ -1,0 +1,20 @@
+.person{
+  background-color: aquamarine;
+  border: 2px solid rebeccapurple;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+
+
+.component{
+  background-color: blueviolet;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  color: white;
+}
