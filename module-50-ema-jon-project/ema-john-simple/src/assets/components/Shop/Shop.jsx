@@ -4,6 +4,7 @@ import Products from '../Products/Products';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
+    const [card, setCard] = useState([])
    
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json')
@@ -12,7 +13,8 @@ const Shop = () => {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
     const handelAddToCard = (product) =>{
-        console.log(product)
+        const newCard = [...card, product]
+        setCard(newCard)
       }
 
     return (
@@ -29,6 +31,7 @@ const Shop = () => {
             </div>
             <div className='card-container'>
                 <h2>Order Summary</h2>
+                <p>Itemes: {card.length}</p>
             </div>
         </div>
     );
